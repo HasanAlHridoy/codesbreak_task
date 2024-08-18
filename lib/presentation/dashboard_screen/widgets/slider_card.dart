@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class SliderCard extends StatefulWidget {
@@ -6,83 +8,69 @@ class SliderCard extends StatefulWidget {
 }
 
 class _SliderCardState extends State<SliderCard> {
-  double _currentValue = 50;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300, // Width of the card
-      padding: EdgeInsets.all(16), // Padding inside the card
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: Colors.grey.shade300,
-          width: 0.5,
+    return CarouselSlider(
+        options: CarouselOptions(
+          height: 180.0,
+          enableInfiniteScroll: false,
+          viewportFraction: 0.8,
+          enlargeCenterPage: true,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade200,
-            offset: Offset(0, 2),
-            blurRadius: 8,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(Icons.volume_up, color: Colors.orange, size: 24),
-              SizedBox(width: 8),
-              Text(
-                "Volume",
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
-              ),
-            ],
-          ),
-          SizedBox(height: 16),
-          SliderTheme(
-            data: SliderTheme.of(context).copyWith(
-              activeTrackColor: Colors.orange, // Color of the active side of the slider
-              inactiveTrackColor: Colors.orange.shade100, // Color of the inactive side
-              trackHeight: 4.0, // Height of the slider track
-              thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
-              thumbColor: Colors.orange, // Color of the slider thumb
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 24.0),
-              overlayColor: Colors.orange.withOpacity(0.2), // Color when thumb is active
-            ),
-            child: Slider(
-              value: _currentValue,
-              min: 0,
-              max: 100,
-              onChanged: (value) {
-                setState(() {
-                  _currentValue = value;
-                });
-              },
-            ),
-          ),
-          SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "0",
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
-              ),
-              Text(
-                "${_currentValue.toInt()}",
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-              Text(
-                "100",
-                style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
+        items: [1, 2, 3].map((i) {
+          return Builder(
+            builder: (BuildContext context) {
+              return Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Replace with actual asset or network image
+                        Image.asset(
+                          'assets/jogging_icon.png',
+                          width: 50,
+                        ),
+                        Text(
+                          '2.32/5.00 miles',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '238.2 cal',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.red,
+                          ),
+                        ),
+                        Text(
+                          'Jogging',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.pause,
+                        color: Colors.orange,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        }).toList(),);
+  }}

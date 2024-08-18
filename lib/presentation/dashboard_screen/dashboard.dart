@@ -1,4 +1,5 @@
 import 'package:codesbreak_task/presentation/common_widgets/custom_app_bar.dart';
+import 'package:codesbreak_task/presentation/dashboard_screen/widgets/goal_card.dart';
 import 'package:codesbreak_task/presentation/dashboard_screen/widgets/heart_rate_card.dart';
 import 'package:codesbreak_task/presentation/dashboard_screen/widgets/preogress_card.dart';
 import 'package:codesbreak_task/presentation/dashboard_screen/widgets/search_widget.dart';
@@ -23,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
         child: Column(
-          children: [SearchWidget(), _buildStaticSection(), SliderCard()],
+          children: [SearchWidget(), _buildStaticSection(), SliderCard(),GoalCard()],
         ),
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:codesbreak_task/presentation/common_widgets/custom_bottom_navbar.dart';
 import 'package:codesbreak_task/presentation/dashboard_screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Dashboard(),
+      home: const CustomBottomNavbar(),
     );
   }
 }

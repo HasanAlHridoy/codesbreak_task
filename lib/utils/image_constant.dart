@@ -3,7 +3,7 @@ class ImageConstant {
   static String imagePath = 'assets/images';
 
   //Images
-  static String accountImg = '$imagePath/activity.svg';
+  static String activityImg = '$imagePath/activity.svg';
   static String arrowImg = '$imagePath/arrow.svg';
   static String bannerImg = '$imagePath/banner_image.svg';
   static String bellDarkImg = '$imagePath/bell_dark.svg';

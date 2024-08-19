@@ -24,14 +24,14 @@ class _DashboardState extends State<Dashboard> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
         child: Column(
-          children: [SearchWidget(), _buildStaticSection(), SliderCard(),GoalCard()],
+          children: [SearchWidget(), _buildStatisticSection(), SliderCard(),GoalCard()],
         ),
       ),
     );
   }
 }
 
-Widget _buildStaticSection() {
+Widget _buildStatisticSection() {
   return Container(
     color: Colors.white,
     padding: EdgeInsets.all(10),

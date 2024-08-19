@@ -24,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
         child: Column(
-          children: [SearchWidget(), _buildStatisticSection(), SliderCard(),GoalCard()],
+          children: [SearchWidget(), _buildStatisticSection(), SliderCard(), GoalCard()],
         ),
       ),
     );
@@ -55,7 +55,7 @@ Widget _buildStatisticSection() {
           children: [
             Expanded(
               child: Column(
-                children: [StepsAndSleepCard(), StepsAndSleepCard()],
+                children: [ReusableCard(), ReusableCard()],
               ),
             ),
             Expanded(child: HeartRateCard())

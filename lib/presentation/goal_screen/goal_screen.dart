@@ -1,3 +1,4 @@
+import 'package:codesbreak_task/presentation/goal_screen/widgets/fitness_goal_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class GoalScreen extends StatelessWidget {
@@ -5,6 +6,15 @@ class GoalScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Activity'),
+      ),
+      body: Column(
+        children: [
+          FitnessGoalCard(),
+        ],
+      ),
+    );
   }
 }
